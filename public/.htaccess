@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /himalaya-hybrid/
+
+  # Fix for assets referenced without base path (optional fallback)
+  RewriteRule ^assets/(.*)$ /himalaya-hybrid/assets/$1 [L,NC]
+
+  # Serve files/directories if they exist
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # SPA Fallback: Redirect everything else to index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
