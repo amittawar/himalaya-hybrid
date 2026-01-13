@@ -377,13 +377,13 @@ export const TRANSLATIONS: Record<Language, TranslationStrings> = {
     seeDetails: 'See Details',
     contactUs: 'CONTACT US',
     home: 'HOME',
-    aboutUs: 'ABOUT US',
+    aboutUs: 'CATALOGUES',
     researchAndDev: 'RESEARCH & DEVELOPMENT',
     salesMarketing: 'SALES & MARKETING',
     products: 'PRODUCTS',
     media: 'MEDIA',
     helpCenter: 'HELP CENTER',
-    allRightsReserved: 'Himalaya Hybrid Seeds Company. Copyright 2025. All Rights Reserved.'
+    // allRightsReserved: ''
   },
   hi: {
     findCatalog: 'अपना फसल कैटलॉग खोजें',

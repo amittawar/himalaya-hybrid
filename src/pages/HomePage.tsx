@@ -35,9 +35,9 @@ const HomePage: React.FC = () => {
     <>
       {/* Hero Section - Search View */}
       <section className="relative h-64 md:h-96 flex flex-col justify-center items-center text-center px-4 overflow-hidden">
-        <img 
-          src="https://imaxims.com/himalaya-hybrid/assets/image/home_bg.jpg" 
-          alt="Lush Vegetables" 
+        <img
+          src="https://himalayahybrid.com/assets/image/home_bg.jpg"
+          alt="Lush Vegetables"
           className="absolute inset-0 w-full h-full object-cover brightness-[0.4]"
         />
         <div className="relative z-10 text-white animate-slide-up">
@@ -54,11 +54,11 @@ const HomePage: React.FC = () => {
       <main className="flex-grow bg-gray-50 -mt-10 md:-mt-20 relative z-20 px-4 pb-20">
         <div className="max-w-xl mx-auto bg-white rounded-xl shadow-2xl p-6 md:p-10 border-t-8 border-[#2d5a27] mt-12">
           <h2 className="text-2xl md:text-3xl text-center font-bold mb-8 text-[#2d5a27] uppercase tracking-normal">{t.findCatalog}</h2>
-          
+
           <div className="space-y-6">
             <div className="group">
               <label className="block text-gray-500 font-sans font-semibold mb-2 ml-1 text-sm">{t.selectCategory}</label>
-              <select 
+              <select
                 className="w-full border-2 border-gray-100 rounded-lg py-3 px-4 focus:border-[#8cc63f] focus:ring-0 transition-all bg-gray-50 font-sans text-gray-800"
                 value={selectedCatId}
                 onChange={(e) => {
@@ -76,7 +76,7 @@ const HomePage: React.FC = () => {
 
             <div className="group">
               <label className="block text-gray-500 font-sans font-semibold mb-2 ml-1 text-sm">{t.selectCrop}</label>
-              <select 
+              <select
                 disabled={!selectedCatId}
                 className="w-full border-2 border-gray-100 rounded-lg py-3 px-4 focus:border-[#8cc63f] focus:ring-0 transition-all bg-gray-50 font-sans text-gray-800 disabled:bg-gray-200 disabled:cursor-not-allowed"
                 value={selectedCropId}
@@ -94,7 +94,7 @@ const HomePage: React.FC = () => {
 
             <div className="group">
               <label className="block text-gray-500 font-sans font-semibold mb-2 ml-1 text-sm">{t.selectProduct}</label>
-              <select 
+              <select
                 disabled={!selectedCropId}
                 className="w-full border-2 border-gray-100 rounded-lg py-3 px-4 focus:border-[#8cc63f] focus:ring-0 transition-all bg-gray-50 font-sans text-gray-800 disabled:bg-gray-200 disabled:cursor-not-allowed"
                 value={selectedProductId}
@@ -109,7 +109,7 @@ const HomePage: React.FC = () => {
               </select>
             </div>
 
-            <button 
+            <button
               disabled={!selectedProductId || loading}
               onClick={handleSeeDetails}
               className="cursor-pointer w-full bg-[#2d5a27] hover:bg-[#1e3d1a] text-white py-4 rounded-lg font-bold text-xl transition-all active:scale-[0.98] disabled:opacity-50 shadow-lg flex items-center justify-center gap-2"

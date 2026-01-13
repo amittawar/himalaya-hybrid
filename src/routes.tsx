@@ -41,5 +41,5 @@ export const router = createBrowserRouter([
     ],
   },
 ], {
-  basename: '/himalaya-hybrid'
+  basename: '/'
 });

@@ -12,9 +12,9 @@ const Layout: React.FC = () => {
   const t = TRANSLATIONS[lang];
 
   return (
-    <div className="min-h-screen flex flex-col font-oswald tracking-wide bg-white  ">
+    <div className="min-h-screen flex flex-col font-oswald tracking-wide bg-white">
       {/* Top Utility Bar */}
-      {/* <div className="bg-[#f8f9fa] border-b border-gray-200 py-1 px-4 flex justify-end items-center gap-2 relative z-[60]">
+      <div className="bg-[#f8f9fa] border-b border-gray-200 py-1 px-4 flex justify-end items-center gap-2 relative z-[60]">
         <div className="flex items-center gap-2 text-[#2d5a27] font-sans text-xs font-semibold">
           <Languages size={14} />
           <span>Language:</span>
@@ -28,7 +28,7 @@ const Layout: React.FC = () => {
           <option value="hi">हिन्दी</option>
           <option value="mr">मराठी</option>
         </select>
-      </div> */}
+      </div>
 
       {/* Main Navigation */}
       <nav className="sticky top-0 z-50 bg-white shadow-sm px-4 py-3 flex justify-between items-center">
@@ -41,19 +41,7 @@ const Layout: React.FC = () => {
             </div>
           </div>
         </div>
-
-        <div className="md:block hidden">
-          <div>
-            <ul className="flex items-center gap-4 text-[18px] text-[#2d5a27] uppercase">
-              {/* <li><Link to="/">Home</Link></li> */}
-              <li><Link to="assets/pdf/Himalya_Catalogue.pdf" target="_blank">Catalogue</Link></li>
-            </ul>
-          </div>
-        </div>
-
-
-
-        <div className="flex items-center gap-4 md:hidden block">
+        <div className="flex items-center gap-4">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
@@ -96,19 +84,19 @@ const Layout: React.FC = () => {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-[#2d5a27] text-white py-8 px-6">
-        <div className="mb-6">
+      <footer className="bg-[#2d5a27] text-white py-12 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-12">
 
           {/* Contact Info */}
           <div>
-            <h2 className="text-3xl text-center font-bold mb-8 uppercase tracking-tighter text-[#8cc63f]">{t.contactUs}</h2>
+            <h2 className="text-3xl font-bold mb-8 uppercase tracking-tighter text-[#8cc63f]">{t.contactUs}</h2>
 
-            <div className="space-y-6 flex flex-col md:flex-row justify-between items-start">
+            <div className="space-y-6">
               <div className="flex gap-4 items-start">
                 <MapPin className="shrink-0 mt-1 text-[#8cc63f]" size={24} />
                 <div>
-                  <p className="font-bold">Himalaya Hybrid Seeds</p>
-                  <p className="font-sans text-[15px] opacity-90 leading-[26px]">
+                  <p className="font-bold">Himalaya Hybrid Seeds Company</p>
+                  <p className="font-sans text-sm opacity-90 leading-snug">
                     1364, SEC-38, PHASE-1,<br />INDUSTRIAL ESTATE, HSIIDC,<br />RAI, (Dist. Sonipat) HARYANA - 131029
                   </p>
                 </div>
@@ -116,28 +104,38 @@ const Layout: React.FC = () => {
 
               <div className="flex gap-4 items-center">
                 <Phone className="shrink-0 text-[#8cc63f]" size={24} />
-                <p className="font-sans text-[16px]"><a href="tel:+91-9873640440">+91-9873640440</a></p>
+                <p className="font-sans text-lg">+91-9873640440</p>
               </div>
 
               <div className="flex gap-4 items-center">
                 <Mail className="shrink-0 text-[#8cc63f]" size={24} />
-                <p className="font-sans text-[16px] break-all"><a href="mailto:Himalayaseeds88@gmail.com">Himalayaseeds88@gmail.com</a></p>
+                <p className="font-sans text-sm break-all">Himalayaseeds88@gmail.com</p>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
-          {/* <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             <div className="space-y-3">
               <FooterLink onClick={() => { navigate('/'); window.scrollTo(0, 0); }}>{t.home}</FooterLink>
               <FooterLink><Link to="assets/pdf/Himalya_Catalogue.pdf" target="_blank">{t.aboutUs}</Link></FooterLink>
             </div>
-          </div> */}
+          </div>
 
-
+          {/* Social and Language */}
+          <div className="flex flex-col items-center md:items-start">
+            {/* <div className="flex gap-4 mb-8">
+              <SocialIcon><Facebook size={24} /></SocialIcon>
+              <SocialIcon><Youtube size={24} /></SocialIcon>
+              <SocialIcon><Instagram size={24} /></SocialIcon>
+              <SocialIcon><Linkedin size={24} /></SocialIcon>
+            </div> */}
+            <p className="font-sans text-sm text-center md:text-left mb-4 opacity-90">{t.allRightsReserved}</p>
+            <div className="text-[#8cc63f]/40 text-xs font-sans tracking-widest uppercase">
+              HIMALAYA™ HYBRID SEEDS
+            </div>
+          </div>
         </div>
-
-
 
         {/* Scroll Top Button */}
         <button
@@ -148,20 +146,6 @@ const Layout: React.FC = () => {
           <ChevronRight size={24} className="-rotate-90" />
         </button>
       </footer>
-
-      {/* Social and Language */}
-      <div className="flex flex-col items-center justify-center md:items-start text-center bg-[#1d4718] text-white py-4">
-        {/* <div className="flex gap-4 mb-8">
-              <SocialIcon><Facebook size={24} /></SocialIcon>
-              <SocialIcon><Youtube size={24} /></SocialIcon>
-              <SocialIcon><Instagram size={24} /></SocialIcon>
-              <SocialIcon><Linkedin size={24} /></SocialIcon>
-            </div> */}
-        <p className="font-sans text-center mb-1 opacity-90 w-full">© Copyright 2025 Himalaya Hybrid Seeds. Made with ❤️ from <a href="http://netmaxims.com/" target="_blank" class="nmx_link">NetMaxims</a>.</p>
-        <div className="text-[#8cc63f]/40 text-xs font-sans tracking-widest uppercase w-full">
-          HIMALAYA™ HYBRID SEEDS
-        </div>
-      </div>
     </div>
   );
 };
